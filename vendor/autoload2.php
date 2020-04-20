@@ -143,6 +143,6 @@ return false;
 
 $autoloader = new Psr4AutoloaderClass();
 $autoloader->addNamespace(
-    'App', '../src'
+    'App/', '../src/'
 );
 $autoloader->register();
