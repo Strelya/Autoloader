@@ -5,8 +5,11 @@ RUN pecl install xdebug \
 
 COPY .docker/php-fpm/xdebug-dev.ini /usr/local/etc/php/conf.d/xdebug-dev.ini
 
-COPY . /src/app/
+COPY . /src/
 
-WORKDIR /src/app/
+WORKDIR /src/
 
-RUN chown -R www-data:www-data /src/app
+RUN chown -R www-data:www-data /src
+
+RUN usermod -u 1000 www-data && \
+    groupmod -g 1000 www-data

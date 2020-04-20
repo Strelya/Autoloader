@@ -140,3 +140,9 @@ return true;
 return false;
 }
 }
+
+$autoloader = new Psr4AutoloaderClass();
+$autoloader->addNamespace(
+    'App', '../src'
+);
+$autoloader->register();
